@@ -22,7 +22,7 @@ void run(HookContext context) {
     for (var fontSize in formattedFontSizes) {
       final name = ('${color['name']}_' + "${fontSize['name']}").camelCase;
       
-      textStylesData.add("  static const $name = TextStyle(fontSize : AppSizes.${fontSize['name']}, color: AppColors.${color['name']}, fontFamily: 'fontFamily');");
+      textStylesData.add("  static const $name = TextStyle(fontSize : AppSizes.${fontSize['name']}, color: AppColors.${color['name']}, fontFamily: \'$fontFamily\');");
     }
   }
   context.vars = {

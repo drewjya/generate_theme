@@ -6,5 +6,5 @@ class AppTextTheme {
   // {{#textStyles}}
   // static const TextStyle {{name}} = TextStyle(fontSize : {{size}}, color: Color({{color}}), fontFamily: "{{fontFamily}}");
   // {{/textStyles}}
-  {{textStyles}}
+{{textStyles}}
 }
