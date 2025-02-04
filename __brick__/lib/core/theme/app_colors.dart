@@ -1,5 +1,6 @@
+import 'package:flutter/material.dart';
 class AppColors {
   {{#colors}}
-  static const int {{name}} = {{value}};
+  static const Color {{name}} = Color({{value}});
   {{/colors}}
 }
