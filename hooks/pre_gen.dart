@@ -20,16 +20,18 @@ void run(HookContext context) {
 
   for (var color in formattedColors) {
     for (var fontSize in formattedFontSizes) {
-      final name = ('${color['name']}_' + "${fontSize['name']}").camelCase;
-
-      textStylesData.add(
-        "  static const $name = TextStyle(fontSize : AppSizes.${fontSize['name']}, color: AppColors.${color['name']});",
-      );
+      textStyles.add({
+        'name': ('${color['name']}_' + "${fontSize['name']}").camelCase,
+        'size': "AppSizes.${fontSize['name']}",
+        'color': "AppColors.${color['name']}",
+        'fontFamily': fontFamily
+      });
+      // }
     }
   }
   context.vars = {
     'colors': formattedColors,
     'fontSizes': formattedFontSizes,
-    'textStyles': textStylesData.join("\n")
+    'textStyles': textStyles
   };
 }
