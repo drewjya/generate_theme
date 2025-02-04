@@ -30,9 +30,8 @@ vars:
     type: list
     description: "List of colors"
     default: []
-    
+
   font_size:
     type: list
     description: "List of font sizes"
     default: []
-
