@@ -1,7 +1,7 @@
 name: kode_theme_hooks
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.5.2
 
 dependencies:
   mason: ^0.1.0
