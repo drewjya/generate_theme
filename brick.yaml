@@ -35,3 +35,8 @@ vars:
     type: list
     description: "List of font sizes"
     default: []
+
+  fontFamily:
+    type: string
+    description: "Font family"
+    default: 'Inter'
