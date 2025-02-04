@@ -16,21 +16,18 @@ void run(HookContext context) {
 
   final List<Map<String, String>> textStyles = [];
 
+  List<String> textStylesData = [];
+
   for (var color in formattedColors) {
     for (var fontSize in formattedFontSizes) {
-      textStyles.add({
-        'name': ('${color['name']}_' + "${fontSize['name']}").camelCase,
-        'size': "AppSizes.${fontSize['name']}",
-        'color': "AppColors.${color['name']}",
-        'fontFamily': fontFamily
-
-      });
-      // }
+      final name = ('${color['name']}_' + "${fontSize['name']}").camelCase;
+      
+      textStylesData.add("  static const $name = TextStyle(fontSize : AppSizes.${fontSize['name']}, color: AppColors.${color['name']}, fontFamily: 'fontFamily');");
     }
   }
   context.vars = {
     'colors': formattedColors,
     'fontSizes': formattedFontSizes,
-    'textStyles': textStyles
+    'textStyles': textStyles.join("\m")
   };
 }
