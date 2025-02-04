@@ -28,6 +28,6 @@ void run(HookContext context) {
   context.vars = {
     'colors': formattedColors,
     'fontSizes': formattedFontSizes,
-    'textStyles': textStyles.join("\m")
+    'textStyles': textStylesData.join("\n")
   };
 }
