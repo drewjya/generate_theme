@@ -42,10 +42,10 @@ void run(HookContext context) {
       textExtensions.add({
         'name': '${color["name"]}_${fontSize['name']}'.camelCase,
         "isThemeNameLight":
-            '${fontSize['name']}'.camelCase+'.${color["name"]}_light}'
+            '${fontSize['name']}'.camelCase+'.'+ '${color["name"]}_light}'
                 .camelCase,
         "isThemeNameDark":
-            '${fontSize['name']}'.camelCase+'.${color["name"]}dark}'
+            '${fontSize['name']}'.camelCase+'.' +'${color["name"]}dark}'
                 .camelCase,
         'isTheme': isTheme,
         "noTheme": !isTheme,
