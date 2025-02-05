@@ -40,13 +40,13 @@ void run(HookContext context) {
     final isTheme = color["theme"] != null;
     for (var fontSize in formattedFontSizes) {
       textExtensions.add({
-        'name': '${color["name"]}_${fontSize['name']}'.camelCase,
-        "isThemeNameLight":
-            '${fontSize['name']}'.camelCase+'.'+ '${color["name"]}_light'
-                .camelCase,
-        "isThemeNameDark":
-            '${fontSize['name']}'.camelCase+'.' +'${color["name"]}_dark'
-                .camelCase,
+        'name': '${fontSize['name']}'.camelCase+'.'+'${color["name"]}',
+        "isThemeNameLight": '${fontSize['name']}'.camelCase +
+            '.' +
+            '${color["name"]}_light'.camelCase,
+        "isThemeNameDark": '${fontSize['name']}'.camelCase +
+            '.' +
+            '${color["name"]}_dark'.camelCase,
         'isTheme': isTheme,
         "noTheme": !isTheme,
       });
