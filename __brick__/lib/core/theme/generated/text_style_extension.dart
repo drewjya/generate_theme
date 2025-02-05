@@ -12,7 +12,7 @@ extension GenThemeTextStyleExtension on TextStyle {
 
 
   {{#fontWeights}}
-  TextStyle get {{.}} => copyWith(
+  TextStyle get w{{.}} => copyWith(
     fontWeights: FontWeight.w{{.}},
   );
   {{/fontWeights}}
