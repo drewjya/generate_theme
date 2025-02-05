@@ -22,7 +22,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
     
     return AppColorExtension(
       {{#colorsExtension}}
-      {{name}}: Color.lerp(this.{{name}}, other.{{name}}, t),
+      {{name}}: Color.lerp({{name}}, other.{{name}}, t),
       {{/colorsExtension}}
     );
   }
