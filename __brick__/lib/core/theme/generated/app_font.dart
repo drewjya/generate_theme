@@ -1,4 +1,4 @@
-{{^screen_util}}
+{{#screen_util}}
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 {{/screen_util}}
 
