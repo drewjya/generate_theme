@@ -42,22 +42,26 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
 
   factory AppColorExtension.dark(){
     return const AppColorExtension(
+      {{#colorsExtension}}
       {{#theme}}
       {{name}}: AppColor.{{name}}Dark,
       {{/theme}}
       {{#noTheme}}
       {{name}}: AppColor.{{name}},
       {{/noTheme}}
+      {{/colorsExtension}}
     );
   }
   factory AppColorExtension.light(){
       return const AppColorExtension(
+        {{#colorsExtension}}
       {{#theme}}
       {{name}}: AppColor.{{name}}Light,
       {{/theme}}
       {{#noTheme}}
       {{name}}: AppColor.{{name}},
       {{/noTheme}}
+      {{/colorsExtension}}
     );
   }
 }

@@ -9,7 +9,7 @@ class AppTextTheme {
   {{/textStyles}}
 
   {{#colors}}
-  static const {{name}} = TextStyle( color:AppColor.{{name}}, fontFamily: "{{fontFamily}}",);
+  static const {{name}} = TextStyle(color:AppColor.{{name}}, fontFamily: "{{fontFamily}}",);
   {{/colors}}
   
 }
