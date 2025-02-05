@@ -17,7 +17,7 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
     required this.{{name}},
     {{/textExtensions}}
     {{#fontSizes}}
-    required this.{{name}};
+    required this.{{name}},
     {{/fontSizes}}
   });
 
@@ -27,7 +27,7 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
     TextStyle? {{name}},
     {{/textExtensions}}
     {{#fontSizes}}
-    TextStyle? {{name}};
+    TextStyle? {{name}},
     {{/fontSizes}}
   }) {
     return AppTextExtension(
