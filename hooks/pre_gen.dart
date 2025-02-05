@@ -16,9 +16,9 @@ void run(HookContext context) {
 
   final List<Map<String, String>> textStyles = [];
 
-  final List<String> colorsListExtension = [];
+  final List<Map<String, String>> colorsListExtension = [];
   for (var color in formattedColors) {
-    colorsListExtension.add("${color['name']}");
+    colorsListExtension.add({"name":"${color['name']}"});
   }
 
   for (var fontSize in formattedFontSizes) {
