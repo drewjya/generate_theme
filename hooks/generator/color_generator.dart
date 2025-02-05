@@ -8,7 +8,8 @@ List<Map<String, String>> colorGenerator(HookContext context) {
     for (final color in colorsList) {
       if (color is Map<String, dynamic> &&
           color.containsKey('name') &&
-          color.containsKey('hex')) {
+          (color.containsKey('hex') ||
+              (color.containsKey('light') && color.containsKey('dark')))) {
         final String name = color['name'].toString();
 
         if (color.containsKey('hex')) {

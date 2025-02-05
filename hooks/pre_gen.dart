@@ -16,7 +16,7 @@ void run(HookContext context) {
 
   final List<Map<String, String>> textStyles = [];
 
-  List<String> textStylesData = [];
+  
 
   for (var color in formattedColors) {
     for (var fontSize in formattedFontSizes) {
