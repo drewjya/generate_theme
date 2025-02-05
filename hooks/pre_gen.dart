@@ -38,6 +38,9 @@ void run(HookContext context) {
           'name': '${color["name"]}_${fontSize['name']}'.camelCase,
           'isTheme': isTheme,
           "noTheme":!isTheme,
+          "isThemeNameLight": '${color["name"]}_light_${fontSize['name']}'.camelCase,
+          "isThemeNameDark": '${color["name"]}_dark_${fontSize['name']}'.camelCase,
+          
         });
       
     }
