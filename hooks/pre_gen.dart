@@ -21,7 +21,8 @@ void run(HookContext context) {
 
   final List<Map<String, String>> colorsListExtension = [];
   for (var color in formattedColors) {
-    colorsListExtension.add({"name": "${color['name']}"});
+    colorsListExtension
+        .add({"name": "${color['name']}", 'fontFamily': fontFamily});
   }
 
   for (var fontSize in formattedFontSizes) {
