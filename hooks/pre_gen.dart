@@ -55,8 +55,8 @@ void run(HookContext context) {
       'name': '${color["name"]}'.camelCase,
       'isTheme': isTheme,
       "noTheme": !isTheme,
-      "isThemeNameLight": '${color["name"]}_light'.camelCase,
-      "isThemeNameDark": '${color["name"]}_dark'.camelCase,
+      "isColorNameLight": '${color["name"]}_light'.camelCase,
+      "isColorNameDark": '${color["name"]}_dark'.camelCase,
     });
   }
 
