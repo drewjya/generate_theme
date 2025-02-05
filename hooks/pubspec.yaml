@@ -1,4 +1,4 @@
-name: kode_theme_hooks
+name: generate_theme_hooks
 
 environment:
   sdk: ^3.5.2

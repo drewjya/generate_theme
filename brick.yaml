@@ -1,4 +1,4 @@
-name: kode_theme
+name: generate_theme
 description: Tools to automate theme extension
 
 # The following defines the brick repository url.
@@ -39,4 +39,4 @@ vars:
   fontFamily:
     type: string
     description: "Font family"
-    default: 'Inter'
+    default: "Inter"
