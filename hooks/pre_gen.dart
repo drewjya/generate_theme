@@ -50,8 +50,8 @@ void run(HookContext context) {
       (context.vars['colorExtension'] as List<dynamic>?) ?? [];
   final List<Map<String, dynamic>> colorExtension = [];
   for (var color in colorExtlist) {
+    print(color);
     final isTheme = color["theme"] != null;
-
     colorExtension.add({
       'name': '${color["name"]}'.camelCase,
       'theme': isTheme,
