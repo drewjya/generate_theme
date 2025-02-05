@@ -41,6 +41,8 @@ void run(HookContext context) {
 
     textExtensions.add({
       'name': '${color["name"]}'.camelCase,
+      'theme': isTheme,
+      'noTheme': !isTheme
     });
   }
 
