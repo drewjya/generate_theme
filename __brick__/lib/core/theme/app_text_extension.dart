@@ -48,9 +48,9 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
       {{#isTheme}}
       {{name}}: AppTextTheme.{{isThemeNameDark}},
       {{/isTheme}}
-      {{#notTheme}}
+      {{#noTheme}}
       {{name}}: AppTextTheme.{{name}},
-      {{/notTheme}}
+      {{/noTheme}}
       {{/textExtensions}}
     );
   }
