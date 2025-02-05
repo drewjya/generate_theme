@@ -1,3 +1,7 @@
+# 0.1.3+4
+
+* Fixing typo and bug
+
 # 0.1.2+3
 
 * Fixing typo and bug
