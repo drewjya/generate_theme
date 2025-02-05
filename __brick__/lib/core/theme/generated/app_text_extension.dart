@@ -7,12 +7,18 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
   {{#textExtensions}}
   final TextStyle {{name}};
   {{/textExtensions}}
+  {{#fontSizes}}
+  final TextStyle {{name}};
+  {{/fontSizes}}
   
 
   const AppTextExtension({
     {{#textExtensions}}
     required this.{{name}},
     {{/textExtensions}}
+    {{#fontSizes}}
+    required this.{{name}};
+    {{/fontSizes}}
   });
 
   @override
@@ -20,11 +26,17 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
     {{#textExtensions}}
     TextStyle? {{name}},
     {{/textExtensions}}
+    {{#fontSizes}}
+    TextStyle? {{name}};
+    {{/fontSizes}}
   }) {
     return AppTextExtension(
       {{#textExtensions}}
       {{name}}: {{name}} ?? this.{{name}},
       {{/textExtensions}}
+      {{#fontSizes}}
+      {{name}}: {{name}} ?? this.{{name}},
+      {{/fontSizes}}
     );
   }
 
@@ -39,6 +51,9 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
       {{#textExtensions}}
       {{name}}: TextStyle.lerp({{name}}, other.{{name}}, t)!,
       {{/textExtensions}}
+      {{#fontSizes}}
+      {{name}}: TextStyle.lerp({{name}}, other.{{name}}, t)!,
+      {{/fontSizes}}
     );
   }
 
@@ -55,6 +70,9 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
       {{/noTheme}}
 
       {{/textExtensions}}
+      {{#fontSizes}}
+      {{name}}: AppTextTheme.{{name}},
+      {{/fontSizes}}
     );
   }
 
@@ -70,6 +88,9 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
       {{/noTheme}}
       
       {{/textExtensions}}
+      {{#fontSizes}}
+      {{name}}: AppTextTheme.{{name}},
+      {{/fontSizes}}
     );
   }
 
