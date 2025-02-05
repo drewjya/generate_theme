@@ -6,20 +6,33 @@ List<Map<String, String>> colorGenerator(HookContext context) {
 
   if (colorsList != null && colorsList.isNotEmpty) {
     for (final color in colorsList) {
-      if (color is Map<String, dynamic> && color.containsKey('name') && color.containsKey('hex')) {
+      if (color is Map<String, dynamic> &&
+          color.containsKey('name') &&
+          color.containsKey('hex')) {
         final String name = color['name'].toString();
-        String hexColor = color['hex'].toString().toUpperCase();
 
-        if (!hexColor.startsWith('#')) {
-          context.logger.warn('Color "$name" does not start with "#". Skipping...');
-          continue;
-        }
+        if (color.containsKey('hex')) {
+          // Standard hex color
+          String hexColor = color['hex'].toString().toUpperCase();
+          if (hexColor.startsWith('#')) {
+            final cleanHex = hexColor.replaceFirst('#', '');
+            if (cleanHex.length == 6) {
+              formattedColors.add({'name': name, 'value': '0xFF$cleanHex'});
+            }
+          }
+        } else if (color.containsKey('light') && color.containsKey('dark')) {
+          // Light/Dark Mode Colors
+          String lightHex =
+              color['light'].toString().toUpperCase().replaceFirst('#', '');
+          String darkHex =
+              color['dark'].toString().toUpperCase().replaceFirst('#', '');
 
-        final cleanHex = hexColor.replaceFirst('#', '');
-        if (cleanHex.length == 6) {
-          formattedColors.add({'name': name, 'value': '0xFF$cleanHex'});
-        } else {
-          context.logger.warn('Invalid hex format for "$name": $hexColor');
+          if (lightHex.length == 6 && darkHex.length == 6) {
+            formattedColors
+                .add({'name': '${name}Light', 'value': '0xFF$lightHex'});
+            formattedColors
+                .add({'name': '${name}Dark', 'value': '0xFF$darkHex'});
+          }
         }
       }
     }
