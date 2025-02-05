@@ -44,13 +44,11 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
 
   factory AppTextExtension.dark(){
     return const AppTextExtension(
+      
       {{#textExtensions}}
-      {{#isTheme}}
-      {{name}}: AppTextTheme.{{isThemeNameDark}},
-      {{/isTheme}}
-      {{#noTheme}}
-      {{name}}: AppTextTheme.{{name}},
-      {{/noTheme}}
+      
+      {{name}}: AppTextTheme.{{name}}Dark,
+      
       {{/textExtensions}}
     );
   }
@@ -59,13 +57,9 @@ class AppTextExtension extends ThemeExtension<AppTextExtension> {
   factory AppTextExtension.light(){
     return const AppTextExtension(
       {{#textExtensions}}
-      {{#isTheme}}
-      {{name}}: AppTextTheme.{{isThemeNameLight}},
-      {{/isTheme}}
       
-      {{#noTheme}}
-      {{name}}: AppTextTheme.{{name}},
-      {{/noTheme}}
+      {{name}}: AppTextTheme.{{name}}Light,
+      
       {{/textExtensions}}
     );
   }
