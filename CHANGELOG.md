@@ -1,3 +1,7 @@
+# 0.1.2+3
+
+* Fixing typo and bug
+
 # 0.1.1+2
 
 * Improvement by using extension (generating less file)
