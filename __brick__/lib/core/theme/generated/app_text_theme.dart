@@ -1,6 +1,6 @@
-import 'app_color.dart';
-import 'app_font.dart';
 import 'package:flutter/widgets.dart';
+
+import 'app_font.dart';
 
 class AppTextTheme {
   {{#textStyles}}

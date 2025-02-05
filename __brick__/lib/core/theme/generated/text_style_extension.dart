@@ -9,8 +9,6 @@ extension GenThemeTextStyleExtension on TextStyle {
     color: AppColor.{{name}},
   );
   {{/colorsListExtension}}
-
-
   {{#fontWeights}}
   TextStyle get w{{.}} => copyWith(
     fontWeight: FontWeight.w{{.}},

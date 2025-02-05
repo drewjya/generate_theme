@@ -42,9 +42,11 @@ void run(HookContext context) {
       textExtensions.add({
         'name': '${color["name"]}_${fontSize['name']}'.camelCase,
         "isThemeNameLight":
-            '${color["name"]}_light_${fontSize['name']}'.camelCase,
+            '${fontSize['name']}'.camelCase+'.${color["name"]}_light}'
+                .camelCase,
         "isThemeNameDark":
-            '${color["name"]}_dark_${fontSize['name']}'.camelCase,
+            '${fontSize['name']}'.camelCase+'.${color["name"]}dark}'
+                .camelCase,
         'isTheme': isTheme,
         "noTheme": !isTheme,
       });
@@ -73,6 +75,6 @@ void run(HookContext context) {
     "textExtensions": textExtensions,
     "colorsExtension": colorExtension,
     "colorsListExtension": colorsListExtension,
-    "fontWeights"  : fontWeights,
+    "fontWeights": fontWeights,
   };
 }
