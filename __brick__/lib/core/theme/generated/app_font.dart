@@ -1,6 +1,6 @@
-{{^screenUtil}}
+{{^screen_util}}
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-{{/sceenUtil}}
+{{/screen_util}}
 
 class AppFont {
   {{#fontSizes}}
