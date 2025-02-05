@@ -20,8 +20,8 @@ void run(HookContext context) {
     for (var fontSize in formattedFontSizes) {
       textStyles.add({
         'name': ('${color['name']}_' + "${fontSize['name']}").camelCase,
-        'size': "AppSizes.${fontSize['name']}",
-        'color': "AppColors.${color['name']}",
+        'size': "AppFont.${fontSize['name']}",
+        'color': "AppColor.${color['name']}",
         'fontFamily': fontFamily
       });
     }
@@ -33,22 +33,38 @@ void run(HookContext context) {
   for (var color in colorsList) {
     final isTheme = color["theme"] != null;
     for (var fontSize in formattedFontSizes) {
-      
-        textExtensions.add({
-          'name': '${color["name"]}_${fontSize['name']}'.camelCase,
-          'isTheme': isTheme,
-          "noTheme":!isTheme,
-          "isThemeNameLight": '${color["name"]}_light_${fontSize['name']}'.camelCase,
-          "isThemeNameDark": '${color["name"]}_dark_${fontSize['name']}'.camelCase,
-          
-        });
-      
+      textExtensions.add({
+        'name': '${color["name"]}_${fontSize['name']}'.camelCase,
+        'isTheme': isTheme,
+        "noTheme": !isTheme,
+        "isThemeNameLight":
+            '${color["name"]}_light_${fontSize['name']}'.camelCase,
+        "isThemeNameDark":
+            '${color["name"]}_dark_${fontSize['name']}'.camelCase,
+      });
     }
   }
+
+  final List<dynamic> colorExtlist =
+      (context.vars['colorExtension'] as List<dynamic>?) ?? [];
+  final List<Map<String, dynamic>> colorExtension = [];
+  for (var color in colorsList) {
+    final isTheme = color["theme"] != null;
+
+    colorExtension.add({
+      'name': '${color["name"]}'.camelCase,
+      'isTheme': isTheme,
+      "noTheme": !isTheme,
+      "isThemeNameLight": '${color["name"]}_light'.camelCase,
+      "isThemeNameDark": '${color["name"]}_dark'.camelCase,
+    });
+  }
+
   context.vars = {
     'colors': formattedColors,
     'fontSizes': formattedFontSizes,
     'textStyles': textStyles,
-    "textExtensions": textExtensions
+    "textExtensions": textExtensions,
+    "colorsExtension": colorExtension
   };
 }
