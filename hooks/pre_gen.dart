@@ -54,6 +54,8 @@ void run(HookContext context) {
 
     colorExtension.add({
       'name': '${color["name"]}'.camelCase,
+      'theme': isTheme,
+      'noTheme': !isTheme
     });
   }
 
