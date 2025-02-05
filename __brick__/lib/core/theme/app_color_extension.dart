@@ -9,7 +9,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
 
   const AppColorExtension({
     {{#colorsExtension}}
-    required this.{{name}}
+    required this.{{name}},
     {{/colorsExtension}}
   });
 
