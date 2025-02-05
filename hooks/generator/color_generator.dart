@@ -2,6 +2,7 @@ import 'package:mason/mason.dart';
 
 List<Map<String, String>> colorGenerator(HookContext context) {
   final List<dynamic>? colorsList = context.vars['colors'] as List<dynamic>?;
+  final fontFamily = context.vars['fontFamily'] as String? ?? 'Inter';
   final List<Map<String, String>> formattedColors = [];
   
 
@@ -19,7 +20,7 @@ List<Map<String, String>> colorGenerator(HookContext context) {
           if (hexColor.startsWith('#')) {
             final cleanHex = hexColor.replaceFirst('#', '');
             if (cleanHex.length == 6) {
-              formattedColors.add({'name': name, 'value': '0xFF$cleanHex'});
+              formattedColors.add({'name': name, 'value': '0xFF$cleanHex', "fontFamily":fontFamily});
             }
           }
         } else if (color.containsKey('light') && color.containsKey('dark')) {
@@ -31,9 +32,9 @@ List<Map<String, String>> colorGenerator(HookContext context) {
 
           if (lightHex.length == 6 && darkHex.length == 6) {
             formattedColors
-                .add({'name': '${name}Light', 'value': '0xFF$lightHex'});
+                .add({'name': '${name}Light', 'value': '0xFF$lightHex', "fontFamily":fontFamily});
             formattedColors
-                .add({'name': '${name}Dark', 'value': '0xFF$darkHex'});
+                .add({'name': '${name}Dark', 'value': '0xFF$darkHex', "fontFamily":fontFamily});
           }
         }
       }
