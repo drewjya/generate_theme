@@ -1,9 +1,9 @@
 import 'package:mason/mason.dart';
 
-({List<Map<String, String>> formattedColors, List<String> nameColor}) colorGenerator(HookContext context) {
+List<Map<String, String>> colorGenerator(HookContext context) {
   final List<dynamic>? colorsList = context.vars['colors'] as List<dynamic>?;
   final List<Map<String, String>> formattedColors = [];
-  final List<String> nameColor = [];
+  
 
   if (colorsList != null && colorsList.isNotEmpty) {
     for (final color in colorsList) {
@@ -12,7 +12,7 @@ import 'package:mason/mason.dart';
           (color.containsKey('hex') ||
               (color.containsKey('light') && color.containsKey('dark')))) {
         final String name = color['name'].toString();
-        nameColor.add(name);
+
         if (color.containsKey('hex')) {
           // Standard hex color
           String hexColor = color['hex'].toString().toUpperCase();
@@ -41,5 +41,5 @@ import 'package:mason/mason.dart';
   } else {
     context.logger.warn('No colors found in config.json.');
   }
-  return (formattedColors: formattedColors, nameColor:nameColor);
+  return formattedColors;
 }

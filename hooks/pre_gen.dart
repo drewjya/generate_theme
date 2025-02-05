@@ -5,9 +5,9 @@ import 'generator/generator.dart';
 void run(HookContext context) {
   // Process Colors
 
-  final data = colorGenerator(context);
-  final formattedColors = data.formattedColors;
-  final nameColor = data.nameColor;
+  final formattedColors = colorGenerator(context);
+  
+  
 
   // Process Font Sizes
 
@@ -28,8 +28,10 @@ void run(HookContext context) {
       });
     }
   }
+
+  final List<dynamic> colorsList = (context.vars['textExtension'] as List<dynamic>?)??[];
   final List<Map<String, String>> textExtensions = [];
-  for (var color in nameColor) {
+  for (var color in colorsList) {
     for (var fontSize in formattedFontSizes) {
       textExtensions.add({
         'name': '${color}_${fontSize['name']}'.camelCase,
