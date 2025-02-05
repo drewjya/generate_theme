@@ -22,7 +22,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
     
     return AppColorExtension(
       {{#colorsExtension}}
-      {{name}}: Color.lerp({{name}}, other.{{name}}, t),
+      {{name}}: Color.lerp({{name}}, other.{{name}}, t)!,
       {{/colorsExtension}}
     );
   }
@@ -41,7 +41,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
   }
 
   factory AppColorExtension.dark(){
-    return AppColorExtension(
+    return const AppColorExtension(
       {{#colorsExtension}}
       {{#isTheme}}
       {{name}}: AppColor.{{isColorNameDark}},
@@ -54,7 +54,7 @@ class AppColorExtension extends ThemeExtension<AppColorExtension> {
     );
   }
   factory AppColorExtension.light(){
-      return AppColorExtension(
+      return const AppColorExtension(
       {{#colorsExtension}}
       {{#isTheme}}
       {{name}}: AppColor.{{isColorNameLight}},
