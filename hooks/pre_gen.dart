@@ -69,6 +69,6 @@ void run(HookContext context) {
     "colorsExtension": colorExtension,
     "colorsListExtension": colorsListExtension,
     "fontWeights": fontWeights,
-    "screenUtil": screenUtil
+    "screen_util": screenUtil
   };
 }
