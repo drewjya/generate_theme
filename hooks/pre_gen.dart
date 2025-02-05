@@ -16,31 +16,34 @@ void run(HookContext context) {
 
   final List<Map<String, String>> textStyles = [];
 
+  final List<String> colorsListExtension = [];
   for (var color in formattedColors) {
-    for (var fontSize in formattedFontSizes) {
-      textStyles.add({
-        'name': ('${color['name']}_' + "${fontSize['name']}").camelCase,
-        'size': "AppFont.${fontSize['name']}",
-        'color': "AppColor.${color['name']}",
-        'fontFamily': fontFamily
-      });
-    }
+    colorsListExtension.add("${color['name']}");
+  }
+
+  for (var fontSize in formattedFontSizes) {
+    textStyles.add({
+      'name': ("${fontSize['name']}").camelCase,
+      'size': "AppFont.${fontSize['name']}",
+      'fontFamily': fontFamily
+    });
   }
 
   final List<dynamic> colorsList =
       (context.vars['textExtension'] as List<dynamic>?) ?? [];
   final List<Map<String, dynamic>> textExtensions = [];
+
   for (var color in colorsList) {
     final isTheme = color["theme"] != null;
     for (var fontSize in formattedFontSizes) {
       textExtensions.add({
         'name': '${color["name"]}_${fontSize['name']}'.camelCase,
-        'isTheme': isTheme,
-        "noTheme": !isTheme,
         "isThemeNameLight":
             '${color["name"]}_light_${fontSize['name']}'.camelCase,
         "isThemeNameDark":
             '${color["name"]}_dark_${fontSize['name']}'.camelCase,
+        'isTheme': isTheme,
+        "noTheme": !isTheme,
       });
     }
   }
@@ -65,6 +68,7 @@ void run(HookContext context) {
     'fontSizes': formattedFontSizes,
     'textStyles': textStyles,
     "textExtensions": textExtensions,
-    "colorsExtension": colorExtension
+    "colorsExtension": colorExtension,
+    "colorsListExtension": colorsListExtension
   };
 }

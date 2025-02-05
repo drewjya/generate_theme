@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 class AppTextTheme {
   {{#textStyles}}
-  static const {{name}} = TextStyle(fontSize : {{size}}, color: {{color}}, fontFamily: "{{fontFamily}}",);
+  static const {{name}} = TextStyle(fontSize : {{size}}, fontFamily: "{{fontFamily}}",);
   {{/textStyles}}
   
 }
