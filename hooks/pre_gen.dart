@@ -45,7 +45,7 @@ void run(HookContext context) {
             '${fontSize['name']}'.camelCase+'.'+ '${color["name"]}_light'
                 .camelCase,
         "isThemeNameDark":
-            '${fontSize['name']}'.camelCase+'.' +'${color["name"]}dark'
+            '${fontSize['name']}'.camelCase+'.' +'${color["name"]}_dark'
                 .camelCase,
         'isTheme': isTheme,
         "noTheme": !isTheme,
