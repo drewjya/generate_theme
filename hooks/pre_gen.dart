@@ -38,19 +38,10 @@ void run(HookContext context) {
 
   for (var color in colorsList) {
     final isTheme = color["theme"] != null;
-    for (var fontSize in formattedFontSizes) {
-      textExtensions.add({
-        'name': '${fontSize['name']}'.camelCase+'.'+'${color["name"]}',
-        "isThemeNameLight": '${fontSize['name']}'.camelCase +
-            '.' +
-            '${color["name"]}_light'.camelCase,
-        "isThemeNameDark": '${fontSize['name']}'.camelCase +
-            '.' +
-            '${color["name"]}_dark'.camelCase,
-        'isTheme': isTheme,
-        "noTheme": !isTheme,
-      });
-    }
+
+    textExtensions.add({
+      'name': '${color["name"]}'.camelCase,
+    });
   }
 
   final List<dynamic> colorExtlist =
