@@ -12,6 +12,8 @@ void run(HookContext context) {
   final List<Map<String, dynamic>> formattedFontSizes =
       appSizeGenerator(context);
 
+      final screenUtil = context.vars['screen_util'] as bool? ?? false;
+
   final List<String> fontWeights =
       List.generate(9, (index) => "${100 + index * 100}");
 
@@ -69,5 +71,6 @@ void run(HookContext context) {
     "colorsExtension": colorExtension,
     "colorsListExtension": colorsListExtension,
     "fontWeights": fontWeights,
+    "screenUtil": screenUtil
   };
 }
