@@ -3,6 +3,7 @@ import 'package:mason/mason.dart';
 List<Map<String, dynamic>> appSizeGenerator(HookContext context) {
   final List<dynamic>? fontSizesList =
       context.vars['fontSizes'] as List<dynamic>?;
+      final screenUtil = context.vars['screen_util'] as bool? ?? false;
 
   final List<Map<String, dynamic>> formattedFontSizes = [];
 
@@ -17,7 +18,7 @@ List<Map<String, dynamic>> appSizeGenerator(HookContext context) {
             : int.tryParse(fontSize['size'].toString()) ?? 0;
 
         if (size > 0) {
-          formattedFontSizes.add({'name': name, 'size': size});
+          formattedFontSizes.add({'name': name, 'size': "${size}${screenUtil?'.sp':''}"});
         } else {
           context.logger
               .warn('Invalid font size for "$name": ${fontSize['size']}');
