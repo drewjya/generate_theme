@@ -1,5 +1,5 @@
 class AppFont {
   {{#fontSizes}}
-  static double {{name}} = {{size}}.0;
+  static double {{name}} = {{size}};
   {{/fontSizes}}
 }
