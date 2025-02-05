@@ -48,7 +48,7 @@ void run(HookContext context) {
   final List<dynamic> colorExtlist =
       (context.vars['colorExtension'] as List<dynamic>?) ?? [];
   final List<Map<String, dynamic>> colorExtension = [];
-  for (var color in colorsList) {
+  for (var color in colorExtlist) {
     final isTheme = color["theme"] != null;
 
     colorExtension.add({
