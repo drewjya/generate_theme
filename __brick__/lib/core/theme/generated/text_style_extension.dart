@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_color.dart';
+import 'app_font.dart';
 
 extension GenThemeTextStyleExtension on TextStyle {
   
@@ -14,4 +15,11 @@ extension GenThemeTextStyleExtension on TextStyle {
     fontWeight: FontWeight.w{{.}},
   );
   {{/fontWeights}}
+  {{#fontSizes}}
+  TextStyle get {{name}} => copyWith(
+    fontSize: AppFont.{{name}},
+  );
+  {{/fontSizes}}
+
+
 }
