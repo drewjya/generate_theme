@@ -6,8 +6,6 @@ void run(HookContext context) {
   // Process Colors
 
   final formattedColors = colorGenerator(context);
-  
-  
 
   // Process Font Sizes
 
@@ -29,13 +27,19 @@ void run(HookContext context) {
     }
   }
 
-  final List<dynamic> colorsList = (context.vars['textExtension'] as List<dynamic>?)??[];
-  final List<Map<String, String>> textExtensions = [];
+  final List<dynamic> colorsList =
+      (context.vars['textExtension'] as List<dynamic>?) ?? [];
+  final List<Map<String, dynamic>> textExtensions = [];
   for (var color in colorsList) {
+    final isTheme = color["theme"] != null;
     for (var fontSize in formattedFontSizes) {
-      textExtensions.add({
-        'name': '${color}_${fontSize['name']}'.camelCase,
-      });
+      
+        textExtensions.add({
+          'name': '${color["name"]}_${fontSize['name']}'.camelCase,
+          'isTheme': isTheme,
+          "noTheme":!isTheme,
+        });
+      
     }
   }
   context.vars = {

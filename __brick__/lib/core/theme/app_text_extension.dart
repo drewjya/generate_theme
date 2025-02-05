@@ -4,7 +4,13 @@ import 'package:flutter/widgets.dart';
 class AppTextExtension extends ThemeExtension<AppTextExtension> {
   
   {{#textExtensions}}
+  {{#isTheme}}
+  final TextStyle {{name}}Light;
+  final TextStyle {{name}}Dark;
+  {{/isTheme}}
+  {{#noTheme}}
   final TextStyle {{name}};
+  {{/noTheme}}
   {{/textExtensions}}
   
 
