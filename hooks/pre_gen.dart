@@ -12,13 +12,16 @@ void run(HookContext context) {
   final List<Map<String, dynamic>> formattedFontSizes =
       appSizeGenerator(context);
 
+  final List<String> fontWeights =
+      List.generate(9, (index) => "${100 + index * 100}");
+
   final fontFamily = context.vars['fontFamily'] as String? ?? 'Inter';
 
   final List<Map<String, String>> textStyles = [];
 
   final List<Map<String, String>> colorsListExtension = [];
   for (var color in formattedColors) {
-    colorsListExtension.add({"name":"${color['name']}"});
+    colorsListExtension.add({"name": "${color['name']}"});
   }
 
   for (var fontSize in formattedFontSizes) {
@@ -69,6 +72,7 @@ void run(HookContext context) {
     'textStyles': textStyles,
     "textExtensions": textExtensions,
     "colorsExtension": colorExtension,
-    "colorsListExtension": colorsListExtension
+    "colorsListExtension": colorsListExtension,
+    "fontWeights"  : fontWeights,
   };
 }
