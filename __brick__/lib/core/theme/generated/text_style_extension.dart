@@ -25,7 +25,7 @@ extension GenThemeTextStyleExtension on TextStyle {
 
   {{#weightData}}
   TextStyle get {{name}} => copyWith(
-    fontWeight = FontWeight.{{weight}}
+    fontWeight: FontWeight.{{weight}}
   )
   {{/weightData}}
 
