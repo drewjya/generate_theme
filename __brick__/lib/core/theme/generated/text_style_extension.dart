@@ -8,17 +8,17 @@ extension GenThemeTextStyleExtension on TextStyle {
   
   {{#colorsListExtension}}
   TextStyle get {{name}} => copyWith(
-    color: AppColor.{{name}},
+    color: AppColor.{{name}}
   );
   {{/colorsListExtension}}
   {{#fontWeights}}
   TextStyle get w{{.}} => copyWith(
-    fontWeight: FontWeight.w{{.}},
+    fontWeight: FontWeight.w{{.}}
   );
   {{/fontWeights}}
   {{#fontSizes}}
   TextStyle get {{name}} => copyWith(
-    fontSize: AppFont.{{name}},
+    fontSize: AppFont.{{name}}
   );
   {{/fontSizes}}
 
