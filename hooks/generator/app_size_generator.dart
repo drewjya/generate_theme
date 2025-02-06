@@ -18,7 +18,7 @@ List<Map<String, dynamic>> appSizeGenerator(HookContext context) {
             : int.tryParse(fontSize['size'].toString()) ?? 0;
 
         if (size > 0) {
-          formattedFontSizes.add({'name': name, 'size': "${size}.0${screenUtil?'.sp':''}"});
+          formattedFontSizes.add({'name': name, 'size': "${size}.0${screenUtil?'.sp':''}", 'basic': "${size}.0"});
         } else {
           context.logger
               .warn('Invalid font size for "$name": ${fontSize['size']}');

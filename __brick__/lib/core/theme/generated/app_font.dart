@@ -6,4 +6,8 @@ class AppFont {
   {{#fontSizes}}
   static double {{name}} = {{size}};
   {{/fontSizes}}
+
+  {{#fontSizes}}
+  static double {{name}}Basic = {{basic}};
+  {{/fontSizes}}
 }
