@@ -1,6 +1,10 @@
+# 0.1.12+13
+
+* Fix opacity hex
+
 # 0.1.11+12
 
-* Support opacity hext
+* Support opacity hex
 
 # 0.1.10+11
 
