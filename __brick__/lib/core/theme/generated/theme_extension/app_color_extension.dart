@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
+import '../data/data.dart';
 
 class AppColorExtension extends ThemeExtension<AppColorExtension> {
   {{#colorsExtension}}

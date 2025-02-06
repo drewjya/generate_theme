@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
-import 'app_font.dart';
+import '../data/app_color.dart';
+import '../data/app_font.dart';
 
 
 extension GenThemeTextStyleExtension on TextStyle {

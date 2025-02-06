@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_text_theme.dart';
+import '../data/app_text_theme.dart';
 
 class AppTextExtension extends ThemeExtension<AppTextExtension> {
   

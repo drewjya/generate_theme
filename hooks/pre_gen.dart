@@ -1,5 +1,6 @@
 import 'package:mason/mason.dart';
 
+import 'generator/button_generator.dart';
 import 'generator/color_extension_generator.dart';
 import 'generator/font_weight_generator.dart';
 import 'generator/generator.dart';
@@ -53,17 +54,10 @@ void run(HookContext context) {
     });
   }
 
-  // final List<dynamic> colorExtlist =
-  //     (context.vars['colorExtension'] as List<dynamic>?) ?? [];
-  final List<Map<String, dynamic>> colorExtension = colorExtensionGenerator(context);
-  // for (var color in colorExtlist) {
-  //   final isTheme = color["theme"] != null;
-  //   colorExtension.add({
-  //     'name': '${color["name"]}'.camelCase,
-  //     'theme': isTheme,
-  //     'noTheme': !isTheme
-  //   });
-  // }
+  final List<Map<String, dynamic>> colorExtension =
+      colorExtensionGenerator(context);
+
+  final buttonStyles = buttonGenerator(context);
 
   context.vars = {
     'colors': formattedColors,
@@ -75,5 +69,6 @@ void run(HookContext context) {
     "fontWeights": fontWeights,
     "screen_util": screenUtil,
     "weightData": weightData,
+    "button_styles": buttonStyles
   };
 }
