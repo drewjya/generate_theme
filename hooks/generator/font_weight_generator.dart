@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:mason/mason.dart';
 
 List<Map<String, String>> fontWeightGenerator(HookContext context) {
@@ -9,6 +11,7 @@ List<Map<String, String>> fontWeightGenerator(HookContext context) {
       if (fontWeight is Map<String, dynamic> &&
           fontWeight.containsKey('name') &&
           fontWeight.containsKey('value')) {
+        log("Font Weigt $fontWeight");
         final String name = fontWeight['name'].toString();
         final String weight = fontWeight['value'].toString();
         fontWeights.add({'name': name, 'weight': weight});
