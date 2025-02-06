@@ -17,7 +17,7 @@ class AppButtonExtension extends ThemeExtension<AppButtonExtension> {
   @override
   ThemeExtension<AppButtonExtension> copyWith({
     {{#button_styles}}
-    ButtonDecoration? {{name}};
+    ButtonDecoration? {{name}},
     {{/button_styles}}
   }) {
     return AppButtonExtension(
