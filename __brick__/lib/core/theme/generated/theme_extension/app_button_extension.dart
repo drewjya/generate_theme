@@ -45,7 +45,9 @@ class AppButtonExtension extends ThemeExtension<AppButtonExtension> {
     {{#button_styles}}
     {{name}}: ButtonDecoration(
     borderRadius: BorderRadius.circular({{radius}}),
-    backgroundColor: AppColor.{{color}}{{#theme}}Dark{{/theme}},
+    {{#color}}
+    backgroundColor:  AppColor.{{color}}{{#theme}}Dark{{/theme}},
+    {{/color}}
     padding: EdgeInsets.all({{padding}}{{#screen_util}}.sp{{/screen_util}}),
     {{#border_color}}
     border: Border.all(
