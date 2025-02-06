@@ -1,5 +1,6 @@
 import 'package:mason/mason.dart';
 
+import 'generator/font_weight_generator.dart';
 import 'generator/generator.dart';
 
 void run(HookContext context) {
@@ -16,6 +17,7 @@ void run(HookContext context) {
 
   final List<String> fontWeights =
       List.generate(9, (index) => "${100 + index * 100}");
+  final weightData = fontWeightGenerator(context);
 
   final fontFamily = context.vars['fontFamily'] as String? ?? 'Inter';
 
@@ -69,6 +71,7 @@ void run(HookContext context) {
     "colorsExtension": colorExtension,
     "colorsListExtension": colorsListExtension,
     "fontWeights": fontWeights,
-    "screen_util": screenUtil
+    "screen_util": screenUtil,
+    "weightData": weightData,
   };
 }

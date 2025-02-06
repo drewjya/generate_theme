@@ -22,4 +22,11 @@ extension GenThemeTextStyleExtension on TextStyle {
   );
   {{/fontSizes}}
 
+
+  {{#weightData}}
+  TextStyle get {{name}} => copyWith(
+    fontWeight = FontWeight.{{value}}
+  )
+  {{/weightData}}
+
 }
