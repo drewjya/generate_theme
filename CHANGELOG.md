@@ -1,3 +1,7 @@
+# 0.1.11+12
+
+* Support opacity hext
+
 # 0.1.10+11
 
 * Fixing typo and bug

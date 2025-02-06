@@ -19,7 +19,7 @@ List<Map<String, String>> colorGenerator(HookContext context) {
           String hexColor = color['hex'].toString().toUpperCase();
           if (hexColor.startsWith('#')) {
             final cleanHex = hexColor.replaceFirst('#', '');
-            if (cleanHex.length == 6) {
+            if (cleanHex.length == 6 || cleanHex.length == 8) {
               formattedColors.add({'name': name, 'value': '0xFF$cleanHex', "fontFamily":fontFamily});
             }
           }
@@ -30,7 +30,7 @@ List<Map<String, String>> colorGenerator(HookContext context) {
           String darkHex =
               color['dark'].toString().toUpperCase().replaceFirst('#', '');
 
-          if (lightHex.length == 6 && darkHex.length == 6) {
+          if ((lightHex.length == 6 || lightHex.length == 8) && (darkHex.length == 6 || darkHex.length == 8)) {
             formattedColors
                 .add({'name': '${name}Light', 'value': '0xFF$lightHex', "fontFamily":fontFamily});
             formattedColors
