@@ -43,7 +43,7 @@ class AppButtonExtension extends ThemeExtension<AppButtonExtension> {
 
   factory AppButtonExtension.dark()=> AppButtonExtension(
     {{#button_styles}}
-    {{name}}: ButtonDecoration({
+    {{name}}: ButtonDecoration(
     borderRadius: BorderRadius.circular({{radius}}),
     backgroundColor: AppColor.{{color}}
     {{#theme}}
@@ -69,7 +69,7 @@ class AppButtonExtension extends ThemeExtension<AppButtonExtension> {
       {{/screen_util}},
           ),
     {{/border_color}}
-  })
+  ),
     
     {{/button_styles}}
   );
