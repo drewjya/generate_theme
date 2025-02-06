@@ -28,12 +28,10 @@ List<Map<String, dynamic>> colorExtensionGenerator(HookContext context) {
               color['light'].toString().toUpperCase().replaceFirst('#', '');
           String darkHex =
               color['dark'].toString().toUpperCase().replaceFirst('#', '');
-
           if (lightHex.length == 6 && darkHex.length == 6) {
             formattedColors
                 .add({'name': '${name}', 'noTheme':false, 'theme':true});
-            formattedColors
-                .add({'name': '${name}', 'noTheme':false, 'theme':true});
+            
           }
         }
       }

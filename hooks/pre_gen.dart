@@ -71,6 +71,7 @@ void run(HookContext context) {
     'textStyles': textStyles,
     "textExtensions": textExtensions,
     "colorsExtension": colorExtension,
+    "colorsListExtension": colorsListExtension,
     "fontWeights": fontWeights,
     "screen_util": screenUtil,
     "weightData": weightData,
