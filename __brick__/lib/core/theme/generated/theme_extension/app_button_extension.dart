@@ -59,4 +59,22 @@ class AppButtonExtension extends ThemeExtension<AppButtonExtension> {
     {{/button_styles}}
   );
 
+  factory AppButtonExtension.light()=> AppButtonExtension(
+    {{#button_styles}}
+    {{name}}: ButtonDecoration(
+    borderRadius: BorderRadius.circular({{radius}}),
+    {{#color}}
+    backgroundColor:  AppColor.{{color}}{{#theme}}Light{{/theme}},
+    {{/color}}
+    padding: EdgeInsets.all({{padding}}{{#screen_util}}.sp{{/screen_util}}),
+    {{#border_color}}
+    border: Border.all(
+            color: AppColor.{{borderColor}}{{#borderTheme}}Light{{/borderTheme}},width: {{borderWidth}}{{#screen_util}}.sp{{/screen_util}},
+          ),
+    {{/border_color}}
+  ),
+    
+    {{/button_styles}}
+  );
+
 }
