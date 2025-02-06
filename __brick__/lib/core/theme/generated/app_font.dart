@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppFont {
   {{#fontSizes}}
-  static double {{name}} = {{size}};
+  static final {{name}} = {{size}};
   {{/fontSizes}}
 
   {{#fontSizes}}
-  static double {{name}}Basic = {{basic}};
+  static final {{name}}Basic = {{basic}};
   {{/fontSizes}}
 }
