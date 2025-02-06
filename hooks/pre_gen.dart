@@ -21,6 +21,7 @@ void run(HookContext context) {
 
   final fontFamily = context.vars['fontFamily'] as String? ?? 'Inter';
 
+  print(weightData);
   final List<Map<String, String>> textStyles = [];
 
   final List<Map<String, String>> colorsListExtension = [];
