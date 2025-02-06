@@ -2,7 +2,7 @@ import 'package:mason/mason.dart';
 
 List<Map<String, dynamic>> buttonGenerator(HookContext context) {
   final List<dynamic>? buttonStyle =
-      context.vars['buttonStyle'] as List<dynamic>?;
+      context.vars['button_style'] as List<dynamic>?;
 
   if (buttonStyle == null || buttonStyle.isEmpty) {
     context.logger.warn('No button styles found in config.json.');
