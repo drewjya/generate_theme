@@ -22,6 +22,7 @@ void run(HookContext context) {
   final weightData = fontWeightGenerator(context);
 
   final fontFamily = context.vars['fontFamily'] as String? ?? 'Inter';
+  final letterSpacing = context.vars['letter_spacing'] as num? ?? 0.0;
 
   print(weightData);
   final List<Map<String, String>> textStyles = [];
@@ -69,6 +70,8 @@ void run(HookContext context) {
     "fontWeights": fontWeights,
     "screen_util": screenUtil,
     "weightData": weightData,
-    "button_styles": buttonStyles
+    "button_styles": buttonStyles,
+    "letter_spacing": letterSpacing
+
   };
 }
