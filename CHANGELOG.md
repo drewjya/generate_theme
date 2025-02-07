@@ -1,3 +1,7 @@
+# 0.1.14+15
+
+* Add colorGenerator
+
 # 0.1.13+14
 
 * Add button style
