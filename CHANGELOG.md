@@ -1,3 +1,7 @@
+# 0.1.15+16
+
+* Fix typo
+
 # 0.1.14+15
 
 * Add colorGenerator
