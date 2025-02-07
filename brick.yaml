@@ -42,3 +42,7 @@ vars:
     type: string
     description: "Font family"
     default: "Inter"
+  letter_spacing:
+    type: number
+    description: "Letter spacing"
+    default: 0.0
